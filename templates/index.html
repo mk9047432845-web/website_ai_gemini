@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skin Lesion Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="glass-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-dna"></i> MEDI-SCAN<span>.AI</span>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span> System Ready
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section" id="drop-area">
+                <div class="upload-content">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3>Upload Medical Imagery</h3>
+                    <p>Drag & drop or <span class="highlight">browse</span></p>
+                    <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg, image/bmp" hidden>
+                </div>
+            </div>
+
+            <div class="preview-container hidden" id="preview-container">
+                <div class="image-wrapper">
+                    <img id="image-preview" src="" alt="Preview">
+                    <div class="scan-overlay" id="scan-overlay">
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+                <button id="analyze-btn" class="glow-btn">
+                    INITIALIZE ANALYSIS <i class="fa-solid fa-bolt"></i>
+                </button>
+            </div>
+
+            <div class="results-container hidden" id="results-container">
+                <div class="result-header">
+                    <h2>DIAGNOSTIC REPORT</h2>
+                    <span class="confidence-badge" id="main-confidence">98.5%</span>
+                </div>
+                
+                <div class="prediction-main">
+                    <h1 id="prediction-text">MALIGNANT</h1>
+                    <p class="subtext">AI Model Prediction</p>
+                </div>
+
+                <div class="stats-grid" id="probabilities-grid">
+                    </div>
+                
+                <button id="reset-btn" class="secondary-btn">New Analysis</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
