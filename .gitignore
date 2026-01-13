@@ -1,3 +1,39 @@
-*.tflite
-uploads/
+# Dependencies
+node_modules/
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# Build / Output
+dist/
+build/
+out/
+
+# Python
 __pycache__/
+*.pyc
+
+# Uploads & Medical data
+uploads/
+media/
+temp/
+
+# AI / ML Models
+models/
+checkpoints/
+*.h5
+*.pt
+*.onnx
+
+# Logs
+*.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
