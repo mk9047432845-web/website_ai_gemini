@@ -1,6 +1,10 @@
-gunicorn
 flask
 flask-cors
-tensorflow
-opencv-python-headless
+requests
 numpy
+Pillow
+opencv-python-headless
+tensorflow-cpu
+torch
+torchvision
+gunicorn
